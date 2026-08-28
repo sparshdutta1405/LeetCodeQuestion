@@ -1,0 +1,8 @@
+# [Array to Stack](https://www.geeksforgeeks.org/problems/stack-designer/1)
+## Easy
+Given an integer array arr[],&nbsp;push the elements of the array into a stack and then print them while popping.Note:&nbsp;No need to print extra line after printing the stack elements.
+Examples: 
+Input: arr = [1, 2, 3, 4, 5]
+Output: 5 4 3 2 1Explanation: Elements are pushed and then popped from the top of the stack in the order 5, 4, 3, 2, 1.
+Input: arr = [1, 6, 43, 1, 2, 0, 5]
+Output: 5 0 2 1 43 6 1
