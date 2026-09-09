@@ -1,0 +1,30 @@
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String> result = new ArrayList<>();
+        backTrack(result, new StringBuilder(), 0, 0, n);
+        return result;
+    }
+
+    private void backTrack(List<String> result, StringBuilder current, int open, int close, int max){
+        if (current.length() == max * 2) {
+            result.add(current.toString());
+            return;
+        }
+
+        if (open < max) {
+            current.append('(');
+            backTrack(result, current, open + 1, close, max);
+            current.deleteCharAt(current.length() - 1); 
+        }
+
+        if (close < open) {
+            current.append(')');
+            backTrack(result, current, open, close + 1, max);
+            current.deleteCharAt(current.length() - 1); 
+        }
+    }
+}
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
