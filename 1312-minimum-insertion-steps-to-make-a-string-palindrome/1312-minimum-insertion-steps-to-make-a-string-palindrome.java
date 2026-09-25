@@ -1,29 +1,24 @@
 class Solution {
     public int minInsertions(String s) {
         int n = s.length();
-        
-        int[][] memo = new int[n][n];
+        String rev = new StringBuilder(s).reverse().toString();
+        int[] dp = new int[n + 1];
 
-        for(int[] row: memo){
-            Arrays.fill(row, -1);
+        for (int i = 1; i <= n; i++) {
+            int prev = 0;
+            for (int j = 1; j <= n; j++) {
+                int temp = dp[j];
+                if (s.charAt(i - 1) == rev.charAt(j - 1)) {
+                    dp[j] = 1 + prev;
+                } else {
+                    dp[j] = Math.max(dp[j], dp[j - 1]);
+                }
+                prev = temp;
+            }
         }
 
-
-        return fxn(0, n-1, s, memo);
-    }
-
-    private int fxn(int i , int j, String s, int[][] memo){
-        if(i >= j)
-        return 0;
-
-        if(memo[i][j] != -1)
-        return memo[i][j];
-
-        if(s.charAt(i) == s.charAt(j)){
-            return memo[i][j] = fxn(i+1,j-1, s, memo);
-        } else{
-            return memo[i][j] = 1+Math.min(fxn(i+1, j, s, memo), fxn(i, j-1, s, memo));
-        }
+        int lps = dp[n];
+        return n - lps;
     }
 }
 
