@@ -1,0 +1,3 @@
+# [Insert in Sorted List](https://www.geeksforgeeks.org/problems/insert-in-a-sorted-list/1)
+## Easy
+Given a linked list sorted in ascending order and an integer called key, insert data in the linked list such that the list remains sorted.Examples:Input: list[] = [25, 36, 47, 58, 69, 80], key = 19Output: [19, 25, 36, 47, 58, 69, 80]Explanation: After inserting 19 the sorted linked list will look like the one in the output.Input: list[] = [50, 100], key = 75Output: [50, 75, 100]Explanation: After inserting 75 the sorted linked list will look like the one in the output.
