@@ -11,6 +11,11 @@ class Node {
 class Solution {
     public Node arrayToList(int arr[]) {
         // code here
+        
+        if(arr.length == 0){
+            return new Node(0);
+        }
+        
         Node first = new Node(arr[0]);
         Node temp = first;
         
